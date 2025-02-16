@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="weather.css">
+  <title>Weather Forecast App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</head>
+<body class="min-h-screen flex items-center justify-center text-gray-900 font-sans transition-all duration-500">
+
+  <div class="max-w-6xl w-full mx-auto p-6">
+    <h1 class="weathet-dashboard text-4xl font-bold text-center text-yellow-500 drop-shadow-lg mb-8 animate-pulse">🌦️ Weather Forecast Dashboard</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+      
+      <!-- Search Section -->
+      <div class="glass p-6 rounded-lg shadow-lg md:col-span-1">
+        <h2 class="text-2xl font-semibold text-yellow-500e mb-4">Search Weather</h2>
+
+        <div class="flex mb-4">
+          <input id="city-input" class="border border-gray-300 p-3 rounded-l w-full focus:outline-none focus:ring-2 focus:ring-blue-400" type="text" placeholder="Enter city name">
+          <button id="search-btn" class="bg-blue-600 text-yellow-500 px-4 py-2 rounded-r hover:bg-blue-700 transition">Search</button>
+        </div>
+  
+        <div class="flex items-center my-4">
+            <hr class="flex-grow border-gray-300">
+            <span class="px-3 text-gray-500 font-semibold">OR</span>
+            <hr class="flex-grow border-gray-300">
+          </div>
+          
+        <button id="location-btn" class="w-full bg-green-500 text-white px-4 py-3 rounded hover:bg-green-600 transition mb-4">
+           Use Current Location
+        </button>
+
+        <h3 class="text-lg font-semibold text-yellow-500 mb-2">Recent Searches</h3>
+        <select id="recent-cities" class="border border-gray-300 p-2 rounded w-full hidden"></select>
+      </div>
+
+      <!-- Weather Display -->
+      <div class="glass p-6 rounded-lg shadow-lg md:col-span-2">
+        <h2 id="city-name" class="text-3xl font-bold mb-4 text-blue"></h2>
+
+        <div id="weather-display" class="flex flex-col md:flex-row items-center justify-between hidden">
+          <div class="text-lg text-yellow-500">
+            <p id="temperature" class="text-2xl font-semibold"></p>
+            <p id="humidity"></p>
+            <p id="wind-speed"></p>
+          </div>
+          <div id="weather-icon" class="text-6xl text-yellow-400"></div>
+        </div>
+
+        <!-- Forecast Display -->
+        <h3 class="text-xl font-semibold mt-6 text-yellow-500">📅 5-Day Forecast</h3>
+        <div id="forecast-display" class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-4 hidden fade-in-up "></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rain Effect Container -->
+  <div id="rain-container" class="rain-container hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
